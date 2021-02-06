@@ -4,6 +4,7 @@ import SignIn from "./pages/signin";
 import SignUp from "./pages/signup";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import * as ROUTES from "./constants/routes";
+import Browse from "./pages/browse";
 
 function App() {
   return (
@@ -17,6 +18,10 @@ function App() {
 
       <Route exact path={ROUTES.SIGN_UP}>
         <SignUp />
+      </Route>
+
+      <Route exact path={ROUTES.BROWSE}>
+        <Browse />
       </Route>
     </Router>
   );

@@ -26,7 +26,7 @@ export default function Card({ children, ...props }) {
 
   return (
     <FeatureContext.Provider
-      value={(showFeature, setShowFeature, itemFeature, setItemFeature)}
+      value={{ showFeature, setShowFeature, itemFeature, setItemFeature }}
     >
       <Container {...props}>{children}</Container>
     </FeatureContext.Provider>
@@ -58,7 +58,7 @@ Card.Meta = function CardMeta({ children, ...props }) {
 };
 
 Card.Item = function CardItem({ item, children, ...props }) {
-  const [setShowFeature, setItemFeature] = useContext(FeatureContext);
+  const { setShowFeature, setItemFeature } = useContext(FeatureContext);
 
   return (
     <Item
@@ -78,7 +78,7 @@ Card.Image = function CardImage({ ...props }) {
 };
 
 Card.Feature = function CardFeature({ children, category, ...props }) {
-  const { showFeature, setShowFeature, itemFeature } = useContext(
+  const { showFeature, itemFeature, setShowFeature } = useContext(
     FeatureContext
   );
   return showFeature ? (
