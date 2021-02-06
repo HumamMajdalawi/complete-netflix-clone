@@ -1,36 +1,24 @@
 import React from "react";
-import { FooterContainer } from "./containers/footer";
-import { JumbotronContainer } from "./containers/jumbotron";
-import { FaqsContainer } from "./containers/faqs";
-import { HeaderContainer } from "./containers/header";
-import { OptForm, Feature } from "./components";
+import Home from "./pages/home";
+import SignIn from "./pages/signin";
+import SignUp from "./pages/signup";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import * as ROUTES from "./constants/routes";
 
 function App() {
   return (
-    <>
-      <HeaderContainer>
-        <Feature>
-          <Feature.Title>
-            Unlimited films, TV programmes and more.
-          </Feature.Title>
-          <Feature.SubTitle>
-            Watch anywhere. Cancel at any time.
-          </Feature.SubTitle>
-          <OptForm>
-            <OptForm.Input placeholder="Email address" />
-            <OptForm.Button>Try it now</OptForm.Button>
-            <OptForm.Break />
-            <OptForm.Text>
-              Ready to watch? Enter your email to create or restart your
-              membership.
-            </OptForm.Text>
-          </OptForm>
-        </Feature>
-      </HeaderContainer>
-      <JumbotronContainer />
-      <FaqsContainer />
-      <FooterContainer />
-    </>
+    <Router>
+      <Route exact path={ROUTES.HOME}>
+        <Home />
+      </Route>
+      <Route exact path={ROUTES.SIGN_IN}>
+        <SignIn />
+      </Route>
+
+      <Route exact path={ROUTES.SIGN_UP}>
+        <SignUp />
+      </Route>
+    </Router>
   );
 }
 

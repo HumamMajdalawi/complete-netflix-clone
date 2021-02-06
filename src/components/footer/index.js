@@ -7,6 +7,8 @@ import {
   Title,
   Text,
   Break,
+  Lang,
+  SelectInput,
 } from "./styles/style";
 
 export default function Footer({ children, ...props }) {
@@ -35,4 +37,12 @@ Footer.Text = function FooterText({ children, ...props }) {
 
 Footer.Break = function FooterBreak(props) {
   return <Break {...props} />;
+};
+
+Footer.Lang = function FooterLang({ children, ...props }) {
+  return <Lang {...props}> {children}</Lang>;
+};
+
+Footer.SelectInput = function FooterSelectInput({ children, ...props }) {
+  return <SelectInput {...props}>{children}</SelectInput>;
 };

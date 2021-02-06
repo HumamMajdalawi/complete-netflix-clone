@@ -3,14 +3,13 @@ import { render } from "react-dom";
 import App from "./App";
 import "normalize.css";
 import { GlobalStyles } from "./global-styles";
-import { BrowserRouter as Router } from "react-router-dom";
+import { firebase } from "./lib/firebase.prod";
+import { FirebaseContext } from "./context/firebase";
 
 render(
-  <>
+  <FirebaseContext.Provider value={{ firebase }}>
     <GlobalStyles />
-    <Router>
-      <App />
-    </Router>
-  </>,
+    <App />
+  </FirebaseContext.Provider>,
   document.getElementById("root")
 );

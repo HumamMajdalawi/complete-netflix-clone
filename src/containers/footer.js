@@ -2,16 +2,7 @@ import React from "react";
 import { Footer } from "../components";
 
 export function FooterContainer() {
-  const customStyle = {
-    maxWidth: 139,
-    maxHeight: 53,
-    border: "2px solid #222",
-  };
-
-  const selectInp = {
-    width: "139px",
-    height: "50px",
-  };
+  const selectInp = {};
   return (
     <Footer>
       <Footer.Title>Questions? Contact us.</Footer.Title>
@@ -47,16 +38,14 @@ export function FooterContainer() {
         </Footer.Column>
       </Footer.Row>
       <Footer.Break />
-      <Footer.Text>
-        <div style={customStyle}>
-          <label htmlFor="select-lang">
-            <select style={selectInp}>
-              <option value="English">English</option>
-              <option value="Arabic">Arabic</option>
-            </select>
-          </label>
-        </div>
-      </Footer.Text>
+      <Footer.Lang>
+        <label htmlFor="select-lang">
+          <Footer.SelectInput style={selectInp}>
+            <option value="English">English</option>
+            <option value="Arabic">Arabic</option>
+          </Footer.SelectInput>
+        </label>
+      </Footer.Lang>
       <Footer.Break />
       <Footer.Text>Netflix Palestinian Territories</Footer.Text>
     </Footer>

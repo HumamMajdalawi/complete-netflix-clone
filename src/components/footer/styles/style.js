@@ -45,6 +45,17 @@ export const Text = styled.p`
   margin-bottom: 40px;
 `;
 
+export const Lang = styled.div`
+  font-size: 13px;
+  color: #757575;
+  margin-bottom: 40px;
+`;
+
+export const SelectInput = styled.select`
+  width: 139px;
+  height: 50px;
+`;
+
 export const Break = styled.div`
   flex-basis: 100%;
   height: 0;
