@@ -16,7 +16,7 @@ export function BrowseContainer({ slides }) {
   const [slideRows, setSlideRows] = useState([]);
   const { firebase } = useContext(FirebaseContext);
   const user = firebase.auth().currentUser || {};
-
+  console.log("user", user.displayName);
   useEffect(() => {
     setTimeout(() => setLoading(false), 3000);
   }, [profile.displayName]);
@@ -58,13 +58,13 @@ export function BrowseContainer({ slides }) {
               Films
             </Header.TextLink>
           </Header.Group>
-
           <Header.Group>
             <Header.Search
               searchTerm={searchTerm}
               setSearchTerm={setSearchTerm}
             />
-            <Header.Profile src={user.photoURL}>
+            <Header.Profile>
+              <Header.Picture src={user.photoURL} />
               <Header.Dropdown>
                 <Header.Group>
                   <Header.Picture src={user.photoURL} />
@@ -72,7 +72,7 @@ export function BrowseContainer({ slides }) {
                 </Header.Group>
                 <Header.Group>
                   <Header.TextLink onClick={() => firebase.auth().signOut()}>
-                    Sign Out
+                    Sign out
                   </Header.TextLink>
                 </Header.Group>
               </Header.Dropdown>
